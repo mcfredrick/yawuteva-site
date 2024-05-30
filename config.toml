@@ -12,7 +12,7 @@ theme = "andromeda0"
 header_links = [
     # {name = "Zola", url = "https://www.getzola.org/"},
     {name = "Home", url = "/"},
-    {name = "Blog", url = "/blog/index.html"},
+    {name = "Blog", url = "/blog"},
 ]
 # license = "CC BY-NC 2.0"
 email = "info@yawuteva.com"
