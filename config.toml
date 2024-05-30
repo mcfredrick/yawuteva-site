@@ -5,7 +5,7 @@ description = "Yawuteva's official website"
 
 compile_sass = true
 
-theme = "andromeda"
+theme = "andromeda0"
 
 [extra]
 header_links = [
