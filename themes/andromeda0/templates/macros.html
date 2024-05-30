@@ -38,11 +38,12 @@
 <footer>
   <div class="footer-black">
     <div class="text-block">
+      {{ macros::spotifyembed() }}
       {% if config.extra.name %}
       <p>By {{ config.extra.name }}</p>
       {% endif %}
       {% if config.extra.email %}
-      <p>Drop me a letter at <a href="mailto:{{ config.extra.email }}">{{config.extra.email}}</a></p>
+      <p><a href="mailto:{{ config.extra.email }}">{{config.extra.email}}</a></p>
       {% endif %}
       {% if config.extra.license %}
       <p class="license">This site is licensed {{ config.extra.license }}</p>
@@ -59,7 +60,7 @@
     <p>By {{ config.extra.name }}</p>
     {% endif %}
     {% if config.extra.email %}
-    <p>Drop me a letter at <a href="mailto:{{ config.extra.email }}">{{config.extra.email}}</a></p>
+    <p><a href="mailto:{{ config.extra.email }}">{{config.extra.email}}</a></p>
     {% endif %}
     {% if config.extra.license %}
     <p class="license">This site is licensed {{ config.extra.license }}</p>

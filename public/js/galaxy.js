@@ -48,6 +48,7 @@ if (document.getElementById('stars') != null) {
       h = c.height = window.innerHeight,
       ctx = c.getContext('2d'),
       
+      // comet = Comet();
       lines = [],
       stars = [],
       tick = 0,
@@ -55,7 +56,7 @@ if (document.getElementById('stars') != null) {
 
   // Options
   opts = {
-    starCount: 50,
+    starCount: 100,
     lineCount: 100,
     
     radVel: .025,
@@ -87,7 +88,7 @@ function init() {
   ctx.fillStyle = '#333';
   ctx.fillRect( 0, 0, w, h );
   
-  if( first ) {   
+  if( first ) {
      loop();
      first = false;
    }
@@ -110,6 +111,7 @@ function step() {
   
   lines.map( function( line ) { line.step(); } );
   stars.map( function( star ) { star.step(); } );
+  // comet.step();
 }
 
 function draw() {
@@ -133,6 +135,8 @@ function draw() {
   ctx.translate( -opts.ellipseCX, -opts.ellipseCY );
   
   stars.map( function( star ) { star.draw(); } );
+
+  // comet.draw();
 }
 
 // Set up galaxy if we want it (such as on index)
@@ -177,20 +181,20 @@ if (document.getElementById('galaxy') != null) {
     var ratio = Math.abs( this.life / this.originalLife - 1/2 );
     
     ctx.lineWidth = ratio * 5;
-    // ctx.strokeStyle = ctx.shadowColor = 'hsla(hue, 80%, light%, alp)'
-    //  .replace( 'hue', tick + this.x / ( w * ( opts.ellipseBaseRadius + opts.ellipseAddedRadius ) ) * 100 )
-    //  .replace( 'light', 75 - ratio * 150 )
-    //  .replace( 'alp', this.alpha );
+    ctx.strokeStyle = ctx.shadowColor = 'hsla(hue, 80%, light%, alp)'
+     .replace( 'hue', tick + this.x / ( w * ( opts.ellipseBaseRadius + opts.ellipseAddedRadius ) ) * 100 )
+     .replace( 'light', 75 - ratio * 150 )
+     .replace( 'alp', this.alpha );
     //
     // Values increase exponentially as distance to center decreases
     var center = Array((c.width/2), (c.height/2))
     var avg_rad = (center[0]+center[1])/4
     var dist_center = Math.sqrt(Math.pow(this.px,2)+Math.pow(this.py,2))
     ctx.strokeStyle = ctx.shadowColor = 'rgba(red, green, blue, alp)'
-      .replace('red', 255*(1-dist_center/avg_rad))
-      .replace('green', (50+205*(1-dist_center/avg_rad)))
-      .replace('blue', 255)
-      .replace('alp', (1-(dist_center/(avg_rad/1.2))));
+      // .replace('red', 255*(1-dist_center/avg_rad))
+      // .replace('green', (50+205*(1-dist_center/avg_rad)))
+      // .replace('blue', 255)
+      // .replace('alp', (1-(dist_center/(avg_rad/1.2))));
     if(dist_center < 1) {
       this.life = 1;
     }
@@ -232,6 +236,35 @@ Star.prototype.draw = function(){
     ctx.fillRect( this.x, this.y, 1, 1 );
   }
 };
+
+function Comet() {
+  this.reset();
+}
+
+Comet.prototype.reset = function() {
+  this.x = Math.random() * w; // start at a random x position
+  this.y = 0; // start at the top of the screen
+  this.vx = (Math.random() - 0.5) * 10; // random x velocity
+  this.vy = Math.random() * 5 + 5; // random y velocity
+  this.size = Math.random() * 2 + 1; // random size
+}
+
+Comet.prototype.step = function() {
+  this.x += this.vx;
+  this.y += this.vy;
+  
+  // reset the comet if it's off the screen
+  if (this.x < 0 || this.x > w || this.y > h) {
+    this.reset();
+  }
+}
+
+Comet.prototype.draw = function() {
+  ctx.fillStyle = '#ffffff'; // white color
+  ctx.beginPath();
+  ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
+  ctx.fill();
+}
 
 window.addEventListener( 'resize', function() {
   
