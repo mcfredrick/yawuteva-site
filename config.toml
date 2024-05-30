@@ -1,7 +1,7 @@
 # The URL the site will be built for
 title = "Yawuteva's Hella Groovy Website"
 # base_url = "https://yawuteva.com"
-base_url = "https://mcfredrick.github.io/yawuteva-site/"
+base_url = "https://mcfredrick.github.io/yawuteva-site"
 description = "Yawuteva's official website"
 
 compile_sass = true
