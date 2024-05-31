@@ -15,6 +15,6 @@ header_links = [
     {name = "Blog", url = "/yawuteva-site/blog"},
 ]
 # license = "CC BY-NC 2.0"
-email = "info@yawuteva.com"
+# email = "info@yawuteva.com"
 # name = "Jane Doe"
 # favicon = "/images/favicon.ico"
