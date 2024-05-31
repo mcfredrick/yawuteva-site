@@ -18,5 +18,11 @@ jobs:
           # Or if publishing to the same repo, use the automatic token
           # TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Add CNAME file to gh-pages branch and commit
-        run: echo "yawuteva.com" > public/CNAME && git add public/CNAME && git commit -m "Add CNAME file" && git push origin gh-pages
+      - name: Add CNAME file to gh-pages branch and commit using the same token
+        run: |
+          echo "yawuteva.com" > CNAME
+          git add CNAME
+          git commit -m "Add CNAME file"
+          git push origin gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
