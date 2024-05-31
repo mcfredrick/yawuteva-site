@@ -11,8 +11,8 @@ theme = "andromeda0"
 [extra]
 header_links = [
     # {name = "Zola", url = "https://www.getzola.org/"},
-    {name = "Home", url = "/yawuteva-site/"},
-    {name = "Blog", url = "/yawuteva-site/blog"},
+    {name = "Home", url = "/"},
+    {name = "Blog", url = "/blog"},
 ]
 # license = "CC BY-NC 2.0"
 # email = "info@yawuteva.com"
