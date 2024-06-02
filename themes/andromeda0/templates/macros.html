@@ -14,8 +14,24 @@
 
   <link rel="stylesheet" href="{{ config.base_url ~ "/main.css" }}">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nanogallery2@3.0.5/dist/css/nanogallery2.min.css" />
+
+  <script src="https://kit.fontawesome.com/c3ba574bf4.js" crossorigin="anonymous"></script>
 </head>
 {% endmacro head %}
+
+{% macro sociallinks() %}
+
+{% if config.extra.social_links %}
+<div class="social-links">
+  {% for link in config.extra.social_links %}
+  <a href="{{ link.url }}" target="_blank" class="social-link">
+    <i class="fab fa-{{ link.icon }}"></i>
+  </a>
+  {% endfor %}
+</div>
+{% endif %}
+
+{% endmacro sociallinks %}
 
 {% macro spotifyembed() %}
 <div class="spotify-embed">
@@ -39,6 +55,7 @@
   <div class="footer-black">
     <div class="text-block">
       {{ macros::spotifyembed() }}
+      {{ macros::sociallinks() }}
       {% if config.extra.name %}
       <p>By {{ config.extra.name }}</p>
       {% endif %}

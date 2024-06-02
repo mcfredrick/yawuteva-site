@@ -1,0 +1,11 @@
+// _icons.scss
+@import 'colors';
+
+.social-link {
+    margin: 10px; // Add a margin all the way around
+
+    i {
+        font-size: 32px;
+        color: $andromeda-light;
+    }
+}
