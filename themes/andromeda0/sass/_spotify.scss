@@ -1,8 +1,17 @@
 .spotify-embed {
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 8em;
     margin-bottom: 20px;
     // height: 100vh; // Optional: Set to the desired height
+}
+
+.spotify-embed iframe {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
