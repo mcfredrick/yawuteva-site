@@ -17,6 +17,7 @@ header_links = [
 ]
 
 social_links = [
+    {name = "Tidal", url = "https://tidal.com/browse/artist/46543196?u", svg_icon = "tidal_macro"},
     {name = "Spotify", url = "https://open.spotify.com/artist/1doOvNrKAtpi5lfZJXrpni?si=sM1p1cf6QduJtrTBmEPA0g", icon = "fab fa-spotify"},
     {name = "YouTube", url = "https://www.youtube.com/channel/UCQs9-ZewO-1sPx3iu41xuwA", icon = "fab fa-youtube"},
     {name = "SoundCloud", url = "https://on.soundcloud.com/8MVcG2k1tUk2Fa6t5", icon = "fab fa-soundcloud"},

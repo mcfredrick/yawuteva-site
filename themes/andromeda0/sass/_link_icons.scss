@@ -2,10 +2,18 @@
 @import 'colors';
 
 .social-link {
-    margin: 10px; // Add a margin all the way around
+    margin: 10px;
 
     i {
         font-size: 32px;
         color: $andromeda-light;
+    }
+
+    .svg-icon {
+        display: inline-block;
+        vertical-align: top;
+        width: 32px;
+        height: 32px;
+        fill: white;
     }
 }
