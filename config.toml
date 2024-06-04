@@ -19,7 +19,7 @@ header_links = [
 social_links = [
     {name = "Spotify", url = "https://open.spotify.com/artist/1doOvNrKAtpi5lfZJXrpni?si=sM1p1cf6QduJtrTBmEPA0g", icon = "fab fa-spotify"},
     {name = "YouTube", url = "https://www.youtube.com/channel/UCQs9-ZewO-1sPx3iu41xuwA", icon = "fab fa-youtube"},
-    {name = "SoundCloud", url = "https://soundcloud.com/mctrekadrift?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing", icon = "fab fa-soundcloud"},
+    {name = "SoundCloud", url = "https://on.soundcloud.com/8MVcG2k1tUk2Fa6t5", icon = "fab fa-soundcloud"},
     {name = "Bandcamp", url = "https://yawuteva.bandcamp.com/", icon = "fab fa-bandcamp"},
 ]
 
